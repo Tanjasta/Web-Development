@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Tatjana's shop</title>
+  </head>
+  <body>
+    <br>
+    <h1>Item</h1>
+    <h1 id="product"><%= myMessage %></h1>
+    <h1 id="price"><%= price %></h1>
+    
+    <img src="images/<%= myImage%>" width="300px">
+    <br>
+<div>
+  <br>
+  <select id="quantity" name="quantity">
+    <option value="0">0</option>
+    <option value="1" selected>1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+    <option value="4">4</option>
+    <option value="5">5</option>
+
+
+
+
+  </select>
+  
+  <button onclick="addToCart()">Add to Cart</button>
+
+
+</div>
+    
+    <br>
+  
+    <a href="/home"></a>
+    <a href="home">Home</a>
+    
+  </body>
+</html>
+
+<script>
+  function addToCart()
+  {
+    //alert("This is from the function");
+    let product = document.getElementById("product").innerHTML;
+    let quantity = document.getElementById("quantity").value;
+    let price = document.getElementById("price").innerHTML;
+    let quan_price = {p: price, quan: quantity};
+    localStorage.setItem(product, JSON.stringify(quan_price));
+  }
+
+
+
+</script>
