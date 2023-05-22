@@ -1,3 +1,5 @@
+//Code is taken from https://vlegalwaymayo.atu.ie/mod/folder/view.php?id=688942 //
+
 const express = require('express');
 const app = express();
 const bodyParser = require("body-parser");
@@ -15,8 +17,8 @@ app.set("view engine", "ejs");
 const auth = require('./auth.js');
 
 // Create two users for testing authentication
-auth.createUser("John", "Secret123");
-auth.createUser("Alice", "pass456");
+auth.createUser("user", "pass");
+auth.createUser("user", "pass");
 
 
 // Import and configure MySQL database connection
